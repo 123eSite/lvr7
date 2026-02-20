@@ -113,7 +113,7 @@ textarea.form-control {
 
 /* ========== HERO ========== */
 .hero {
-    min-height: 80vh;
+    min-height: 60vh;
     background-image: url('../assets/Arvore solid color.png'); /* Placeholder path, needs check */
     background-size: cover;
     background-position: center;
@@ -252,6 +252,11 @@ header.fix.show {
 }
 
 /* ========== Responsivo ========== */
+@media (max-width: 1399px) {
+    h1 {
+        font-size: 46px;
+    }
+}
 @media (max-width: 991px) {
     .navbar-collapse {
         position: absolute;
