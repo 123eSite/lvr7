@@ -71,6 +71,7 @@ img {
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
+    white-space: nowrap;
 }
 
 .button.green {
@@ -114,9 +115,9 @@ textarea.form-control {
 /* ========== HERO ========== */
 .hero {
     min-height: 60vh;
-    background-image: url('../assets/Arvore solid color.png'); /* Placeholder path, needs check */
+    background-image: url('../img/slider.webp'); /* Placeholder path, needs check */
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     padding: 100px 0;
 }
 
@@ -258,6 +259,9 @@ header.fix.show {
     }
 }
 @media (max-width: 991px) {
+    h1 {
+        font-size: 36px;
+    }
     .navbar-collapse {
         position: absolute;
         top: 100%;
@@ -271,5 +275,10 @@ header.fix.show {
     .nav-item.ms-lg-3 {
         margin-left: 0 !important;
         margin-top: 16px;
+    }
+    .hero {
+        background-image: url('../img/slider-mobile.webp'); /* Placeholder path, needs check */
+        background-size: cover;
+        background-position: left center;
     }
 }
