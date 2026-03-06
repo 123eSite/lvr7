@@ -7,7 +7,7 @@
     --color-black: #000000;
 
     /* Typography - Sizes */
-    --font-h1: 54px;
+    --font-h1: 42px;
     --font-h2: 48px;
     --font-h3: 24px;
     --font-body: 16px;
@@ -115,7 +115,7 @@ textarea.form-control {
 /* ========== HERO ========== */
 .hero {
     min-height: 60vh;
-    background-image: url('../img/slider1.webp'); /* Placeholder path, needs check */
+    background-image: url('../img/slider2.webp'); /* Placeholder path, needs check */
     background-size: cover;
     background-position: right center;
     padding: 100px 0;
@@ -265,7 +265,7 @@ header.fix.show {
 /* ========== Responsivo ========== */
 @media (max-width: 1399px) {
     h1 {
-        font-size: 46px;
+        font-size: 36px;
     }
 }
 @media (max-width: 991px) {
