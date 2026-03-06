@@ -294,4 +294,14 @@ header.fix.show {
     .history .bg-gray-light {
         width: 100%;
     }
+    .about img {
+        margin-top: -250px;
+    }
+    .about .list-unstyled {
+        position: relative;
+        z-index: 1;
+    }
+     .about .list-unstyled li {
+        background-color: #fff;
+     }
 }
