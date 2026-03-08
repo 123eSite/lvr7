@@ -1,0 +1,80 @@
+/*-----------------------
+     feature 
+------------------------*/
+.feature-item {
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    @include prefix(transition, all 0.3s linear, webkit moz ms o);
+
+    .feature-icon {
+        position: relative;
+        font-size: 60px;
+        line-height: 1;
+        color: var(--color-primary);
+        margin-bottom: 27px;
+    }
+
+    .feature-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .feature-desc {
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+}
+
+.awards {
+    .feature-item {
+        text-align: center;
+        margin-bottom: 60px;
+
+        .feature-img {
+            padding: 50px;
+            border-radius: 7px;
+            background-color: var(--color-gray-100);
+            @include prefix(transition, all 0.35s ease, webkit moz ms o);
+
+            img {
+                margin: auto;
+                @include prefix(transition, all 0.4s ease, webkit moz ms o);
+            }
+        }
+
+        .feature-body {
+            padding: 30px 25px 0;
+        }
+
+
+        .feature-desc {
+            font-size: 16px;
+        }
+
+        &:hover {
+            .feature-img {
+                background-color: var(--color-primary);
+
+                img {
+                    @include prefix(transform, translateY(-5px), webkit moz ms o);
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Phones and tablets */
+@include responsive(sm) {
+    .feature-item {
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+
+        .feature-title {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+    }
+}

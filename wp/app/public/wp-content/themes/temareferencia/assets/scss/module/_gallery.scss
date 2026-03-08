@@ -1,0 +1,119 @@
+/*-------------------------
+   gallery
+-------------------------*/
+.gallery {
+    .gallery-img {
+        position: relative;
+        margin-bottom: var(--bs-gutter-x);
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            background-color: rgba(var(--color-primary-rgb), 0.9);
+            @include prefix(transform, scale(0), webkit moz ms o);
+            @include prefix(transition, all 0.4s ease-in-out, webkit moz ms o);
+        }
+
+        img {
+            border-radius: 2px;
+        }
+
+        .popup-gallery-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            opacity: 0;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            border-radius: 2px;
+            color: var(--color-primary);
+            background-color: var(--color-white);
+            @include prefix(transition, all 0.5s ease, webkit moz ms o);
+            @include prefix(transform, translate(-50%, -50%), webkit moz ms o);
+
+            &:hover {
+                color: var(--color-white);
+                background-color: var(--color-secondary);
+            }
+        }
+
+        &:hover {
+            &:before {
+                opacity: 1;
+                @include prefix(transform, scale(1), webkit moz ms o);
+            }
+
+            .popup-gallery-item {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.gallery-hidden .gallery-img {
+    display: none;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 1s;
+}
+
+.card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: visible;
+    animation: gradientAnimation 5s linear infinite alternate paused;
+}
+
+.card-gradient-inner {
+    position: absolute;
+    opacity: 0.85;
+    color: var(--color-primary);
+    background-color: currentColor;
+    animation: gradientSpotAnimation 5s infinite alternate paused;
+    animation-delay: -3s;
+}
+
+.card-gradient-spot1 {
+    bottom: -45px;
+    right: 146px;
+    box-shadow: var(--color-primary) 0 0 80px 90px;
+}
+
+.card-gradient-spot2 {
+    bottom: -35px;
+    right: 30px;
+    box-shadow: var(--color-primary) 0 0 100px 110px;
+}
+
+.card-gradient-animation:hover {
+    .card-overlay {
+        opacity: 1;
+    }
+
+    .card-gradient {
+        animation-play-state: running;
+    }
+}

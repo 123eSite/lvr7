@@ -1,0 +1,89 @@
+/*----------------------
+    Accordions
+------------------------*/
+.accordion {
+    --bs-accordion-bg: transparent;
+}
+
+.accordion-item {
+    --title-font-size: 20px;
+    --body-font-size: 15px;
+    --title-padding-inline-end: 25px;
+    --bs-accordion-btn-padding-y: 18px;
+    --bs-accordion-btn-padding-x: 40px;
+    --bs-accordion-body-padding-x: 25px;
+    --bs-accordion-body-padding-y: 20px;
+    --bs-accordion-border-radius: 0;
+    --bs-accordion-color: var(--color-default);
+    --bs-accordion-border-color: var(--color-gray-200);
+    border: 0;
+    border-bottom: 1px solid var(--color-gray-200);
+    padding: var(--bs-accordion-btn-padding-y) 0;
+    padding-inline-end: var(--bs-accordion-body-padding-x);
+
+    .accordion-title {
+        font-size: var(--title-font-size);
+        cursor: pointer;
+        display: block;
+        position: relative;
+        color: var(--color-secondary);
+        padding-inline-end: var(--title-padding-inline-end);
+        margin-inline-end: calc(-1 * var(--title-padding-inline-end));
+        @include prefix(transition, all .3s linear, webkit moz ms o);
+
+        &:hover {
+            color: var(--color-primary);
+        }
+
+        &:after {
+            font-family: "icomoon";
+            content: "\e946";
+            position: absolute;
+            top: 2px;
+            right: 0;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-secondary);
+            @include prefix(transition, all .3s linear, webkit moz ms o);
+        }
+
+        &:hover {
+            &:after {
+                @include prefix(transform, rotate(90deg), webkit moz ms o);
+            }
+        }
+    }
+
+    .accordion-body {
+        padding: var(--bs-accordion-body-padding-y) 0 0;
+
+        p {
+            font-size: var(--body-font-size);
+            margin-bottom: 0;
+        }
+    }
+
+    &.opened {
+        .accordion-header:not(.collapsed) {
+            .accordion-title {
+                &:after {
+                    @include prefix(transform, rotate(90deg), webkit moz ms o);
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Phones and tablets */
+@include responsive(sm) {
+    .accordion-item {
+        --title-font-size: 15px;
+        --body-font-size: 14px;
+        --title-padding-inline-start: 20px;
+        --bs-accordion-btn-padding-y: 12px;
+        --bs-accordion-btn-padding-x: 30px;
+        --bs-accordion-body-padding-y: 12px;
+    }
+}

@@ -1,0 +1,128 @@
+/*-----------------------
+    Progress Bars
+------------------------*/
+.progress-item {
+    overflow: hidden;
+}
+
+.progress {
+    --bs-progress-bar-transition: width 2s ease;
+    --bs-progress-border-radius: 2px;
+    --bs-progress-bg: var(--color-gray-500);
+    --bs-progress-height: 4px;
+    --bs-progress-width: 100%;
+    --bs-progress-bar-bg: var(--color-primary);
+    width: var(--bs-progress-width);
+    overflow: visible;
+    position: relative;
+}
+
+.progress-bar {
+    overflow: visible;
+    position: relative;
+    border-radius: var(--bs-progress-border-radius);
+    height: var(--bs-progress-height);
+    width: 0;
+}
+
+.progress-title {
+    position: relative;
+    z-index: 2;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.progress-percentage {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    position: absolute;
+    top: -33px;
+    right: 0;
+    color: var(--color-secondary);
+}
+
+.progressbars-vertical {
+    .progress-item {
+        overflow: visible;
+        margin-bottom: 0;
+    }
+
+    .progress {
+        --bs-progress-bg: transparent;
+        --bs-progress-height: 190px;
+        --bs-progress-width: 110px;
+        --bs-progress-bar-transition: height 2s ease;
+        display: flex;
+        align-items: end;
+    }
+
+    .progress-bar {
+        height: 0;
+        width: var(--bs-progress-width);
+    }
+
+    .progress-percentage {
+        font-family: var(--font-secondary);
+        font-size: 25px;
+        font-weight: 500;
+        top: auto;
+        bottom: 30px;
+        right: 0;
+        left: 0;
+        color: var(--color-white);
+    }
+}
+
+.progressbars-horizontal {
+    .progress-item:not(:last-of-type) {
+        margin-bottom: 40px;
+    }
+}
+
+.progress-circle {
+    width: 110px;
+    height: 110px;
+    margin: auto;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+
+    circle {
+        fill: none;
+        stroke-width: 10;
+        cx: 50;
+        cy: 50;
+        r: 45;
+    }
+
+    .circle-bg {
+        stroke: #e6e6e6;
+    }
+
+    .progress {
+        stroke: var(--color-primary);
+        stroke-dasharray: 283;
+        stroke-dashoffset: 283;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 1s ease-in-out;
+    }
+
+    text {
+        fill: black;
+        font-family: var(--font-secondary);
+        font-size: 23px;
+        font-weight: 500;
+        text-anchor: middle;
+        dominant-baseline: middle;
+
+        // SAFARI FIX: Don't use transform/transform-origin inside SVG text
+        // Instead rotate text in SVG via attribute: <text transform="rotate(90 50 50)"> 
+        // or control rotation from JS if needed
+    }
+}

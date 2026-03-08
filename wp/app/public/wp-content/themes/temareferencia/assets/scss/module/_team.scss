@@ -1,0 +1,93 @@
+/*--------------------
+     Team
+---------------------*/
+.member {
+    --name-font-size: 22px;
+    --card-padding: 35px;
+    --card-bg: var(--color-gray-100);
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    margin-bottom: var(--bs-gutter-x);
+    @include prefix(transition, all .3s ease-in-out, webkit moz ms o);
+
+    .member-img {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .member-data {
+        position: relative;
+        padding: var(--card-padding);
+
+        .member-name {
+            font-size: var(--name-font-size);
+            margin-bottom: 2px;
+        }
+
+        .member-desc {
+            margin-bottom: 0;
+        }
+    }
+
+    .social-icons {
+        --space-x: 15px;
+        --icon-color: var(--color-secondary);
+        --icon-color-hover: var(--color-primary);
+    }
+
+    &:hover {
+        .social-icons {
+            --icon-color: var(--color-primary);
+        }
+    }
+}
+
+.team-layout2 {
+    .member {
+        --card-padding: 20px 0;
+        --card-bg: transparent;
+
+        .social-icons {
+            --space-x: 11px;
+            --icon-color: var(--color-primary);
+            --icon-color-hover: var(--color-secondary);
+            opacity: 0;
+            @include prefix(transform, scale(0.5), webkit moz ms o);
+            @include prefix(transition, all .3s ease-in-out, webkit moz ms o);
+        }
+
+        &:hover {
+            .social-icons {
+                opacity: 1;
+                @include prefix(transform, scale(1), webkit moz ms o);
+            }
+        }
+    }
+}
+
+/* Mobile Phones and tablets */
+@include responsive(sm) {
+    .member {
+        --name-font-size: 15px;
+        --card-padding: 20px 25px;
+
+        .social-icons li a {
+            opacity: 1;
+        }
+    }
+
+    .team-layout2 {
+        .member {
+            .social-icons {
+                opacity: 1;
+                @include prefix(transform, scale(1), webkit moz ms o);
+            }
+        }
+    }
+}

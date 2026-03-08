@@ -1,0 +1,21 @@
+/*---------------------------
+    Client
+---------------------------*/
+.client {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		max-width: 160px;
+		opacity: 0.8;
+		filter: brightness(0);
+		@include prefix(transition, opacity .5s ease, webkit moz ms o);
+	}
+
+	&:hover img {
+		opacity: 1;
+	}
+}

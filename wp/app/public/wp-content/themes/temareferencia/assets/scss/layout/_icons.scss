@@ -1,0 +1,112 @@
+/*------------------- 
+    Icons & clip paths
+------------------*/
+.social-icons {
+    --space-x: 20px;
+    --icon-size: 20px;
+    --icon-color: var(--color-secondary);
+    --icon-color-hover: var(--color-primary);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+
+    li {
+        a {
+            display: flex;
+            align-items: center;
+            color: var(--icon-color);
+            font-size: var(--icon-size);
+            @include prefix(transition, all 0.4s ease, webkit moz o);
+
+            &:hover {
+                color: var(--icon-color-hover);
+            }
+        }
+
+        &:not(:last-child) {
+            margin-inline-end: var(--space-x);
+        }
+    }
+
+    &-light {
+        --icon-color: var(--color-white);
+        --icon-color-hover: var(--color-primary);
+    }
+}
+
+.plus-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: 3px;
+    font-style: normal;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    @include prefix(transition, all 0.3s linear, webkit moz ms o);
+}
+
+.rating {
+    .active {
+        color: #f4572e;
+    }
+}
+
+.arrow-flip {
+    display: inline-block;
+}
+
+[class*="arrow-hover-flip-"] .arrow-flip-path-1 {
+    transform: translate(0px, 0px);
+    transition-delay: 0.1s;
+}
+
+.arrow-hover-flip-up .arrow-flip-path-2 {
+    opacity: 0;
+    transform: translate(-60px, 60px);
+    transition-delay: 0s;
+}
+
+[class*="arrow-hover-flip-"] .arrow-flip-path-2,
+[class*="arrow-hover-flip-"] .arrow-flip-path-3 {
+    transition-delay: 0s;
+}
+
+[class*="arrow-hover-flip-"] [class*="arrow-flip-path"] {
+    transition: transform 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    will-change: transform;
+}
+
+.arrow-hover-flip-up:hover .arrow-flip-path-1 {
+    transform: translate(60px, -60px);
+    transition-delay: 0s;
+}
+
+.arrow-hover-flip-up:hover .arrow-flip-path-2,
+.arrow-hover-flip-up:hover .arrow-flip-path-3 {
+    transform: translate(0px, 0px);
+    transition-delay: 0.1s;
+    opacity: 1;
+}
+
+.animated-arrow-hover {
+    --stoke-dashoffset: 140px;
+
+    path {
+        stroke-dashoffset: 0;
+        stroke-dasharray: var(--stoke-dashoffset);
+        transition: all 0.8s cubic-bezier(0, 0, 0.5, 0.98);
+    }
+
+    &:hover path {
+        stroke-dashoffset: calc(2 * var(--stoke-dashoffset));
+    }
+}

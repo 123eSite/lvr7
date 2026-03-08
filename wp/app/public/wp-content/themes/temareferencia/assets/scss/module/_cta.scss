@@ -1,0 +1,87 @@
+/*-------------------------
+    Call to Action
+--------------------------*/
+.cta {
+    --title-font-size: 17px;
+    --title-line-height: 1.5;
+    --title-margin-bottom: 24px;
+    --icon-font-size: 18px;
+    --icon-size: 88px;
+    --icon-color: var(--color-secondary);
+    --icon-bg: var(--color-white);
+    --icon-border-width: 15px;
+    --icon-border-color: var(--color-gray-100);
+    --icon-border-radius: 50%;
+    --icon-margin-bottom: 20px;
+    --desc-font-size: 15px;
+
+    .cta-title {
+        font-size: var(--title-font-size);
+        line-height: var(--title-line-height);
+        margin-bottom: var(--title-margin-bottom);
+    }
+
+    .cta-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--icon-font-size);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        color: var(--icon-color);
+        background-color: var(--icon-bg);
+        border-radius: var(--icon-border-radius);
+        margin-bottom: var(--icon-margin-bottom);
+        border: var(--icon-border-width) solid var(--icon-border-color);
+    }
+}
+
+.cta-banner {
+    --banner-padding: 27px;
+    --banner-max-width: 260px;
+    --banner-bg: var(--color-white);
+    --banner-border-radius: 3px;
+    --banner-box-shadow: 0px 5px 83px 0px rgba(40, 40, 40, 0.12);
+    --cta-title-font-size: 20px;
+    --cta-title-line-height: 1.4;
+    --cta-title-margin-bottom: 10px;
+    --cta-desc-font-size: 15px;
+    position: relative;
+    z-index: 2;
+    padding: var(--banner-padding);
+    background-color: var(--banner-bg);
+    max-width: var(--banner-max-width);
+    box-shadow: var(--banner-box-shadow);
+    border-radius: var(--banner-border-radius);
+
+    .cta-title {
+        font-size: var(--cta-title-font-size);
+        line-height: var(--cta-title-line-height);
+        margin-bottom: var(--cta-title-margin-bottom);
+    }
+
+    .cta-desc {
+        font-size: var(--cta-desc-font-size);
+        color: var(--color-secondary);
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    .cta-icon {
+        color: var(--color-primary);
+        font-size: 70px;
+        line-height: 1;
+        margin-bottom: 25px;
+    }
+
+    &-primary {
+        --banner-bg: var(--color-primary);
+    }
+}
+
+/* Extra Small Devices */
+@include responsive(xs) {
+    .cta-banner {
+        --banner-padding: 17px;
+    }
+}

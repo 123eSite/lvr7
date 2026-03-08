@@ -1,0 +1,15 @@
+/*------------------------
+    Alerts
+--------------------------*/
+.alert {
+    --bs-alert-bg: transparent;
+    --bs-alert-padding-x: 30px;
+    --bs-alert-padding-y: 30px;
+    --bs-border-width: 6px;
+    --bs-alert-color: var(--color-secondary);
+    --bs-alert-border-color: var(--color-gray-200);
+}
+
+.alert-title {
+    font-size: 17px;
+}

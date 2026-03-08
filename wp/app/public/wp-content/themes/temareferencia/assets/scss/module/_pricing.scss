@@ -1,0 +1,114 @@
+/*--------------------------
+        pricing
+--------------------------*/
+.pricing-package {
+    --package-padding: 50px;
+    --package-bg: var(--color-white);
+    --title-font-size: 22px;
+    --title-margin-bottom: 17px;
+    --desc-font-size: 15px;
+    --desc-color: var(--color-default);
+    --desc-margin-bottom: 23px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--bs-gutter-x);
+    background-color: var(--package-bg);
+    padding: var(--package-padding);
+    @include prefix(transition, all .3s linear, webkit moz ms o);
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 0;
+        background-color: var(--color-secondary);
+        @include prefix(transition, height .4s linear, webkit moz ms o);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 210px;
+        height: 200px;
+        opacity: 0;
+        @include prefix(transition, all .3s linear, webkit moz ms o);
+        background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0) 0%, rgba(var(--color-primary-rgb), 0) 41%, rgba(var(--color-primary-rgb), 0.16) 100%);
+    }
+
+    .package-title {
+        font-size: var(--title-font-size);
+        margin-bottom: var(--title-margin-bottom);
+    }
+
+    .package-price {
+        font-family: var(--font-secondary);
+        font-size: 25px;
+        font-weight: 500;
+        color: var(--color-secondary);
+        line-height: 1;
+    }
+
+    .package-desc {
+        font-size: var(--desc-font-size);
+        margin-bottom: var(--desc-margin-bottom);
+    }
+
+    .btn {
+        --btn-height: 50px;
+        --btn-min-width: 50px;
+        --bs-btn-padding-x: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        @include prefix(transform, translate(50px, -50px), webkit moz ms o);
+    }
+
+    &:hover,
+    &.featured {
+        --package-bg: var(--color-gray-100);
+
+        &:before {
+            height: 100%;
+        }
+
+        &:after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .btn {
+            opacity: 1;
+            @include prefix(transform, translate(0, 0), webkit moz ms o);
+        }
+    }
+}
+
+@media(max-width:1199px) {
+    .pricing-package {
+        --package-padding: 25px;
+        --title-font-size: 20px;
+        --title-margin-bottom: 14px;
+        --desc-margin-bottom: 14px;
+    }
+}
+
+/* Mobile Phones & tablets and Small Screens */
+@media (max-width:768px) {
+    .pricing-package {
+        --package-bg: var(--color-gray-100);
+
+        &:before {
+            height: 100%;
+        }
+
+        .btn {
+            opacity: 1;
+            @include prefix(transform, translate(0, 0), webkit moz ms o);
+        }
+    }
+}

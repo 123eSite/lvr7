@@ -1,0 +1,108 @@
+/*--------------------------
+      Video
+--------------------------*/
+.video-btn {
+    --btn-size: 110px;
+    --btn-color: var(--color-white);
+    --btn-bg: rgba(var(--color-white-rgb), 0.4);
+    --btn-filter: blur(10px) brightness(95%);
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+
+    .video-player {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--btn-size);
+        height: var(--btn-size);
+        border-radius: 50%;
+        text-align: center;
+        color: var(--btn-color);
+        background-color: var(--btn-bg);
+        backdrop-filter: var(--btn-filter);
+        @include prefix(transition, all .3s linear, webkit moz ms o);
+
+        &:hover {
+            @include prefix(transform, scale(1.05), webkit moz ms o);
+        }
+    }
+
+    &.centred-btn {
+        top: 50%;
+        left: 50%;
+        @include prefix(transform, translate(-50%, -50%), webkit moz ms o);
+    }
+
+    &.top-right-btn {
+        top: 40px;
+        left: 40px;
+    }
+
+    &-sm {
+        --btn-size: 70px;
+    }
+
+    &-xl {
+        --btn-size: 128px;
+    }
+
+    .video-title {
+        color: var(--color-secondary);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1;
+        display: block;
+        margin-left: 12px;
+    }
+
+    .video-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 110px;
+        width: 160px;
+    }
+
+    .video-text {
+        position: relative;
+        padding: 26px;
+        max-width: 240px;
+        height: 110px;
+        background-color: var(--color-white);
+
+        .video-desc {
+            font-size: 14px;
+            line-height: 1.4;
+            color: var(--color-default);
+            margin-top: 6px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 4px;
+            background-color: var(--color-primary);
+        }
+    }
+}
+
+[class*="video-banner"] {
+    position: relative;
+
+    .video-btn {
+        position: absolute;
+        z-index: 2;
+    }
+}
+
+/* Mobile Phones and tablets  */
+@include responsive(sm) {
+    .video-btn {
+        --btn-size: 80px;
+    }
+}

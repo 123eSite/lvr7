@@ -1,0 +1,235 @@
+/*-------------------------
+   Background & Colors
+--------------------------*/
+//  Colors 
+.color-gray {
+    color: var(--color-gray-100) !important;
+}
+
+.color-gray-400 {
+    color: var(--color-gray-400) !important;
+}
+
+.color-dark {
+    color: var(--color-dark) !important;
+}
+
+.color-primary,
+.color-primary-hover:hover {
+    color: var(--color-primary) !important;
+}
+
+.color-primary-200 {
+    color: var(--color-primary-200) !important;
+}
+
+a.color-primary:hover {
+    color: var(--color-secondary) !important;
+}
+
+.color-secondary {
+    color: var(--color-secondary) !important;
+}
+
+a.color-secondary:hover {
+    color: var(--color-primary) !important;
+}
+
+.color-heading {
+    color: var(--color-accent) !important;
+}
+
+.color-body {
+    color: var(--bs-gray) !important;
+}
+
+.color-white,
+.color-white-hover:hover,
+a.color-white-hover:hover {
+    color: var(--color-white) !important;
+}
+
+//  backgrounds 
+.bg-transparent {
+    background-color: transparent;
+}
+
+.bg-primary-300 {
+    background-color: var(--color-primary-300) !important;
+}
+
+.bg-primary-700 {
+    background-color: var(--color-primary-700) !important;
+}
+
+.bg-gray-700 {
+    background-color: var(--color-gray-700) !important;
+}
+
+.bg-white {
+    background-color: var(--color-white) !important;
+}
+
+.bg-gray {
+    background-color: var(--color-gray-100) !important;
+}
+
+.bg-dark {
+    background-color: var(--color-dark) !important;
+}
+
+.bg-heading {
+    background-color: var(--color-accent) !important;
+}
+
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary) !important;
+}
+
+.bg-white-blured {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--color-white-rgb), 0.85);
+}
+
+.bg-img {
+    position: relative;
+    z-index: 1;
+}
+
+.background-size-auto {
+    background-size: auto !important;
+}
+
+.bg-parallax {
+    background-attachment: fixed;
+}
+
+.bg-overlay:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(#1b1a1a, 0.25);
+}
+
+.bg-overlay-gray-primary:before {
+    background: linear-gradient(320deg, rgba(var(--color-primary-rgb), 0.4) 0%, transparent 35%), linear-gradient(to bottom, rgba(243, 247, 251, 0) 0%, rgba(245, 248, 250, 0) 34%, var(--color-gray-100) 98%, var(--color-gray-100) 100%);
+}
+
+.overlay-shadow-bottom-left,
+.overlay-shadow-bottom-right {
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+.overlay-shadow-bottom-left {
+    background-image: url(../images/shapes/3.webp);
+}
+
+.overlay-shadow-bottom-right {
+    background-image: url(../images/shapes/4.webp);
+}
+
+.bg-overlay-2:before {
+    background-color: rgba(#1b1a1a, 0.15);
+}
+
+.bg-overlay-3:before {
+    background-color: rgba(#1b1a1a, 0.05);
+}
+
+.bg-overlay-gradient:before {
+    background-color: transparent;
+    opacity: 0.65;
+    background-image: linear-gradient(180deg, #010711 0%, rgba(27, 26, 26, 0.65) 34%);
+}
+
+.bg-overlay-primary:before {
+    background-color: rgba(var(--color-primary-rgb), 0.9);
+}
+
+.bg-overlay-primary-gradient {
+    &:before {
+        background-color: rgba(var(--color-primary-rgb), 0.85);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(to bottom, rgba(37, 55, 69, 0) 0%, rgba(254, 91, 44, 0.04) 3%, var(--color-primary) 80%);
+    }
+}
+
+.bg-overlay-secondary-gradient {
+    &:before {
+        opacity: 0.87;
+        background-color: var(--color-secondary);
+    }
+
+    &:after {
+        --overlay-color: 228, 164, 0;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, rgba(var(--overlay-color), 0) 0%, var(--color-secondary) 80%, var(--color-secondary) 100%);
+    }
+}
+
+.bg-overlay-gray {
+    &:before {
+        opacity: .9;
+        background-color: #f6f6f1;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(to bottom, #f6f6f1 0%, #f6f6f1 20%, rgba(246, 246, 241, 4%) 97%, rgba(246, 246, 241, 0) 100%);
+    }
+}
+
+.bg-gray-gradient {
+    background: -webkit-linear-gradient(to bottom, var(--color-gray-100) 0%, var(--color-gray-100) 34%, rgba(249, 249, 249, 0) 98%, rgba(249, 249, 249, 0) 100%);
+    background: -moz-linear-gradient(to bottom, var(--color-gray-100) 0%, var(--color-gray-100) 34%, rgba(249, 249, 249, 0) 98%, rgba(249, 249, 249, 0) 100%);
+    background: -ms-linear-gradient(to bottom, var(--color-gray-100) 0%, var(--color-gray-100) 34%, rgba(249, 249, 249, 0) 98%, rgba(249, 249, 249, 0) 100%);
+    background: linear-gradient(to bottom, var(--color-gray-100) 0%, var(--color-gray-100) 34%, rgba(249, 249, 249, 0) 98%, rgba(249, 249, 249, 0) 100%);
+}
+
+@media (min-width:1200px) {
+    .has-pattern-bg {
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 453px;
+            height: 492px;
+            z-index: 1;
+            background-image: url(../images/patterns/1.png);
+        }
+    }
+}

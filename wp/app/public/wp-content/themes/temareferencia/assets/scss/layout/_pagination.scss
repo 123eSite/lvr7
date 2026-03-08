@@ -1,0 +1,73 @@
+/*----------------------
+    Pagination
+-----------------------*/
+.pagination {
+    // override Bootstrap Values
+    --bs-pagination-font-size: 18px;
+    --bs-pagination-color: var(--color-secondary);
+    --bs-pagination-bg: var(--color-white);
+    --bs-pagination-border-width: 0;
+    --bs-pagination-border-color: #bcbcbc;
+    --bs-pagination-border-radius: 50%;
+    --bs-pagination-hover-color: var(--color-white);
+    --bs-pagination-hover-bg: var(--color-primary);
+    --bs-pagination-hover-border-color: var(--color-primary);
+    --bs-pagination-focus-color: var(--color-secondary);
+    --bs-pagination-focus-bg: var(--color-primary);
+    --bs-pagination-focus-box-shadow: none;
+    --bs-pagination-active-color: var(--color-white);
+    --bs-pagination-active-bg: var(--color-primary);
+    --bs-pagination-active-border-color: var(--color-primary);
+
+    .page-item {
+        &:not(:last-child) {
+            margin-inline-end: 10px;
+
+            .page-link {
+                --bs-pagination-border-width: 2px;
+                width: 58px;
+                height: 58px;
+                border-radius: var(--bs-pagination-border-radius);
+            }
+        }
+
+        &.next {
+            --bs-pagination-font-size: 15px;
+            --bs-pagination-hover-bg: transparent;
+            --bs-pagination-hover-color: var(--color-primary);
+            --bs-pagination-active-color: var(--color-primary);
+            --bs-pagination-active-bg: transparent;
+            --bs-pagination-focus-color: var(--color-primary);
+            --bs-pagination-focus-bg: transparent;
+
+            span,
+            i {
+                padding: 4px;
+            }
+        }
+    }
+
+    .page-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        @include prefix(transition, all 0.3s ease-in-out, webkit moz ms o);
+    }
+}
+
+/* Mobile Phones and tablets */
+@include responsive(sm) {
+    .pagination {
+        --bs-pagination-font-size: 13px;
+
+        .page-item {
+            &:not(:last-child) {
+                .page-link {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+}

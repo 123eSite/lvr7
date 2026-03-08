@@ -1,0 +1,127 @@
+/*------------------------
+    Animations
+-----------------------*/
+@include keyframes(ripple) {
+    70% {
+        box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@include keyframes(spinner) {
+    0% {
+        @include prefix(transform, rotate(0deg), webkit moz ms o);
+    }
+
+    100% {
+        @include prefix(transform, rotate(360deg), webkit moz ms o);
+    }
+}
+
+@include keyframes(slideTopDown) {
+    0% {
+        @include prefix(transform, translateY(0), webkit moz ms o);
+    }
+
+    100% {
+        @include prefix(transform, translateY(-6px), webkit moz ms o);
+    }
+}
+
+@include keyframes(headerAnimation) {
+    0% {
+        opacity: 0;
+        @include prefix(transform, translateY(-100%), webkit moz ms o);
+    }
+
+    100% {
+        opacity: 1;
+        @include prefix(transform, translateY(0), webkit moz ms o);
+    }
+}
+
+@include keyframes(zoomOut) {
+    50% {
+        transform: scale(1.1)
+    }
+}
+
+@include keyframes(bounce) {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        @include prefix(transform, translateY(0), webkit moz ms o);
+    }
+
+    40% {
+        @include prefix(transform, translateY(-10px), webkit moz ms o);
+    }
+
+    60% {
+        @include prefix(transform, translateY(-5px), webkit moz ms o);
+    }
+}
+
+@include keyframes(gradientAnimation) {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(10%, 20%);
+    }
+}
+
+@include keyframes(gradientSpotAnimation) {
+    50% {
+        transform: scale(2) translateY(-10px);
+    }
+}
+
+@include keyframes(rotationMoveFromRight) {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 100deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@include keyframes(rotationMoveFromLeft) {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -100deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@include keyframes(fullWidth) {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

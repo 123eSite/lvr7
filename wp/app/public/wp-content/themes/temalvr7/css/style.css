@@ -1,0 +1,307 @@
+:root {
+    /* Colors */
+    --color-green: #00340e;
+    --color-gray-light: #f8f8f8;
+    --color-gray-dark: #dedede;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+    /* Typography - Sizes */
+    --font-h1: 42px;
+    --font-h2: 48px;
+    --font-h3: 24px;
+    --font-body: 16px;
+    --font-btn: 16px;
+
+    /* Spacing */
+    --padding-section: 80px;
+}
+
+/* Mobile Typography */
+@media (max-width: 767px) {
+    :root {
+        --font-h1: 40px;
+        --font-h2: 32px;
+        --font-h3: 20px;
+        --padding-section: 40px;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-black);
+    font-size: var(--font-body);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Offset for sticky header */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--color-green);
+}
+
+h1 { font-size: var(--font-h1); line-height: 1.2; }
+h2 { font-size: var(--font-h2); line-height: 1.3; }
+h3 { font-size: var(--font-h3); line-height: 1.4; }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utility Classes */
+.padding-tb {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+
+.bg-gray-light {
+    background-color: var(--color-gray-light);
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px; /* Pill shape based on DS hint */
+    font-weight: 600;
+    font-size: var(--font-btn);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.button.green {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.button.green:hover {
+    background-color: #002209; /* Darker green */
+    color: var(--color-white);
+}
+
+.button.outline {
+    background-color: transparent;
+    border-color: var(--color-green);
+    color: var(--color-green);
+}
+
+.button.outline:hover {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+/* Forms */
+.form-control {
+    height: 48px;
+    border-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+.form-control:focus {
+    border-color: var(--color-green);
+    box-shadow: 0 0 0 0.25rem rgba(0, 52, 14, 0.25);
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+/* ========== HERO ========== */
+.hero {
+    min-height: 60vh;
+    background-image: url('../img/slider2.webp'); /* Placeholder path, needs check */
+    background-size: cover;
+    background-position: right center;
+    padding: 100px 0;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* Dark overlay for text contrast */
+    z-index: 1;
+}
+
+/* Specific button override for Hero */
+.button.outline.text-white.border-white:hover {
+    background-color: var(--color-white);
+    color: var(--color-green);
+}
+
+/* ========== SOLUTIONS ========== */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+.card i {
+    color: var(--color-green);
+}
+
+.history .bg-gray-light {
+    width: 120%;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== CASES ========== */
+.nav-pills .nav-link {
+    color: var(--color-green);
+    background-color: transparent;
+    border: 1px solid var(--color-green);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* ========== TESTIMONIALS ========== */
+.swiper-pagination-bullet-active {
+    background-color: var(--color-green) !important;
+}
+
+/* ========== HEADER ========== */
+header {
+    padding: 0;
+    position: relative;
+    z-index: 100;
+    transition: all 0.3s ease;
+    background-color: var(--color-white);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--color-green) !important;
+}
+
+.nav-link {
+    color: var(--color-black) !important;
+    font-weight: 600;
+    padding: 10px 16px !important;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-green) !important;
+}
+
+/* Header Fix */
+header.fix {
+    position: fixed;
+    top: -100px; /* Hidden by default */
+    left: 0;
+    width: 100%;
+    padding: 16px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+header.fix.show {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========== FOOTER ========== */
+.footer {
+    background-color: var(--color-gray-light);
+    color: var(--color-black);
+}
+
+.footer .h3 {
+    color: var(--color-green);
+}
+
+.footer p {
+    color: #666;
+}
+
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.footer a {
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--color-green);
+}
+
+.social-links a {
+    font-size: 20px;
+    color: var(--color-green);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* ========== Responsivo ========== */
+@media (max-width: 1399px) {
+    h1 {
+        font-size: 36px;
+    }
+}
+@media (max-width: 991px) {
+    h1 {
+        font-size: 36px;
+    }
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .nav-item.ms-lg-3 {
+        margin-left: 0 !important;
+        margin-top: 16px;
+    }
+    .hero {
+        background-image: url('../img/slider-mobile.webp'); /* Placeholder path, needs check */
+        background-size: cover;
+        background-position: left center;
+    }
+    .history .bg-gray-light {
+        width: 100%;
+    }
+    .about img {
+        margin-top: -250px;
+    }
+    .about .list-unstyled {
+        position: relative;
+        z-index: 1;
+    }
+     .about .list-unstyled li {
+        background-color: #fff;
+     }
+}

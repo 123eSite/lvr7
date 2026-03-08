@@ -1,0 +1,34 @@
+/*-------------------------
+    Breadcrumb
+--------------------------*/
+.breadcrumb {
+    padding: 0;
+    background-color: transparent;
+}
+
+.breadcrumb-item {
+    position: relative;
+    font-size: 14px;
+    --bs-breadcrumb-divider-color: var(--color-primary-200);
+
+    a {
+        font-weight: 700;
+        color: var(--bs-breadcrumb-divider-color);
+    }
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    font-family: var(--font-icons);
+    content: "\e930";
+    font-size: 10px;
+    float: none;
+}
+
+/* Mobile Phones and tablets */
+@include responsive(sm) {
+
+    .breadcrumb-item a,
+    .breadcrumb-item+.breadcrumb-item {
+        font-size: 13px;
+    }
+}

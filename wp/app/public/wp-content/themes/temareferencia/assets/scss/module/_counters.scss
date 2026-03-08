@@ -1,0 +1,103 @@
+/*---------------------------
+    Counters
+--------------------------*/
+.counter-item {
+    --counter-number-font-size: 40px;
+    --counter-icon-font-size: 30px;
+    --counter-desc-font-size: 15px;
+    --counter-desc-margin: 20px 0 0;
+    --counter-item-margin: 30px;
+    position: relative;
+    margin-bottom: var(--counter-item-margin);
+
+    .counter {
+        font-family: var(--font-secondary);
+        font-size: var(--counter-number-font-size);
+        font-weight: 500;
+        line-height: 1;
+        min-width: 150px;
+        margin-inline-end: 20px;
+        margin-bottom: 0;
+    }
+
+    .counter-icon {
+        color: var(--color-secondary);
+        font-size: var(--counter-icon-font-size);
+        line-height: 1;
+    }
+
+    .counter-desc {
+        font-size: var(--counter-desc-font-size);
+        color: #282828;
+        max-width: 240px;
+        margin: var(--counter-desc-margin);
+    }
+
+    &:hover {
+        .counter-icon {
+            animation: bounce 1s linear infinite;
+        }
+    }
+}
+
+.counters-layout2 {
+    .counter-item {
+        --counter-number-font-size: 25px;
+        --counter-desc-font-size: 18px;
+        --counter-desc-margin: 0;
+        --counter-desc-pdding: 20px 0;
+        --counter-item-margin: 0;
+        padding: var(--counter-desc-pdding);
+        border-top: 1px solid var(--color-gray-200);
+
+        &:last-of-type {
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .counter-desc {
+            max-width: none;
+            font-weight: 700;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .counters {
+        &.border-inline {
+            .row>[class*="col-"]:not(:last-of-type) {
+                .counter-item:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 1px;
+                    right: calc(var(--bs-gutter-x) * .5);
+                    background-color: var(--color-gray-200);
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Phones and tablets */
+@include responsive(sm) {
+    .counter-item {
+        --counter-number-font-size: 30px;
+        --counter-icon-font-size: 20px;
+        --counter-desc-margin: 10px 0 0;
+    }
+
+    .counters-layout2 {
+        .counter-item {
+            --counter-number-font-size: 20px;
+            --counter-desc-font-size: 14px;
+            --counter-desc-margin: 0;
+            --counter-item-margin: 0;
+            --counter-desc-pdding: 10px 0;
+
+            .counter {
+                min-width: 80px;
+            }
+        }
+    }
+}

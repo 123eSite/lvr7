@@ -1,0 +1,350 @@
+/*----------------------------
+      Helper Classes
+----------------------------*/
+// Z-index
+.z-index-1 {
+  z-index: 1;
+}
+
+.sticky-top {
+  z-index: 500;
+  top: 100px;
+}
+
+// Flexbox helpers
+.flex-1 {
+  flex: 1;
+}
+
+.align-v {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.align-v-h {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+// Row gutters
+.row-gutter-0 {
+  --bs-gutter-x: 0;
+}
+
+// Text truncation 
+[class*="text-truncate-"] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+@for $i from 1 through 6 {
+  .text-truncate-#{$i} {
+    -webkit-line-clamp: $i;
+    line-clamp: $i;
+  }
+}
+
+// Text utilities
+.text-wrap-balance {
+  text-wrap: balance;
+}
+
+.text-align-start {
+  text-align: start !important;
+}
+
+.text-align-end {
+  text-align: end !important;
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+// Rotations and transitions
+.transition-linear-3 {
+  @include prefix(transition, all .3s linear 0ms, webkit moz ms o);
+}
+
+.rotate-90 {
+  @include prefix(transform, rotate(90deg), webkit moz ms o);
+}
+
+// Box shadow
+.box-shadow-none {
+  box-shadow: none !important;
+}
+
+// Gap utilities
+$gaps: (
+  30,
+  40,
+  50
+);
+
+@each $gap in $gaps {
+  .gap-#{$gap} {
+    gap: #{$gap}px;
+  }
+}
+
+// Max width helpers
+$max-widths: (
+  320,
+  350,
+  450,
+  480,
+  500,
+  600,
+  620
+);
+
+@each $width in $max-widths {
+  .mw-#{$width} {
+    max-width: #{$width}px;
+  }
+}
+
+.mw-none {
+  max-width: none !important;
+}
+
+// Font weight
+.fw-600 {
+  font-weight: 600;
+}
+
+// Font sizes
+$font-sizes: (
+  13,
+  14,
+  16,
+  17,
+  24,
+  25,
+  26
+);
+
+@each $size in $font-sizes {
+  .fz-#{$size} {
+    font-size: #{$size}px !important;
+  }
+}
+
+// Border utilities
+.border-top {
+  border-top: 1px solid var(--color-gray-600) !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--color-gray-600) !important;
+}
+
+// Section with space utilities
+@include responsive-min(xl) {
+  .section-with-space-start .container-fluid {
+    padding-inline-start: calc((100% - 1280px) / 2) !important;
+    padding-inline-end: 0;
+  }
+
+  .section-with-space-end .container-fluid {
+    padding-inline-end: calc((100% - 1280px) / 2) !important;
+    padding-inline-start: 0;
+  }
+}
+
+@include responsive-min(xxl) {
+  .section-with-space-start .container-fluid {
+    padding-inline-start: calc((100% - 1320px) / 2) !important;
+  }
+
+  .section-with-space-end .container-fluid {
+    padding-inline-end: calc((100% - 1320px) / 2) !important;
+  }
+}
+
+// Generate spacing classes
+$spacers: (
+  0: 0,
+  5: 5px,
+  10: 10px,
+  20: 20px,
+  30: 30px,
+  40: 40px,
+  45: 45px,
+  50: 50px,
+  60: 60px,
+  70: 70px,
+  80: 80px,
+  90: 90px,
+  100: 100px,
+  110: 110px,
+  120: 120px,
+  130: 130px,
+);
+
+// Margins
+@each $space, $value in $spacers {
+  @if $value !=0 {
+
+    // Margin top
+    .mt-#{$space} {
+      margin-top: $value !important;
+    }
+
+    // Margin bottom
+    .mb-#{$space} {
+      margin-bottom: $value !important;
+    }
+
+    // Margin right
+    .mr-#{$space} {
+      margin-right: $value !important;
+    }
+
+    // Margin left
+    .ml-#{$space} {
+      margin-left: $value !important;
+    }
+  }
+
+  @else {
+    .mt-0 {
+      margin-top: 0 !important;
+    }
+
+    .mb-0 {
+      margin-bottom: 0 !important;
+    }
+
+    .mr-0 {
+      margin-right: 0 !important;
+    }
+
+    .ml-0 {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+// Paddings
+@each $space, $value in $spacers {
+  @if $value !=0 {
+
+    // Padding top
+    .pt-#{$space} {
+      padding-top: $value !important;
+    }
+
+    // Padding bottom
+    .pb-#{$space} {
+      padding-bottom: $value !important;
+    }
+
+    // Padding right
+    .pr-#{$space} {
+      padding-right: $value !important;
+    }
+
+    // Padding left
+    .pl-#{$space} {
+      padding-left: $value !important;
+    }
+  }
+
+  @else {
+    .pr-0 {
+      padding-right: 0 !important;
+    }
+
+    .pl-0 {
+      padding-left: 0 !important;
+    }
+  }
+}
+
+// Responsive adjustments for medium devices
+@include responsive(md) {
+  .order-3-md {
+    order: 3;
+  }
+
+  .fz-16-md {
+    font-size: 16px !important;
+  }
+
+  // Scale down spacings for smaller screens
+  @each $space, $value in $spacers {
+    @if $space >=30 {
+
+      // Margins
+      .mt-#{$space} {
+        margin-top: calc($value / 2) !important;
+      }
+
+      .mb-#{$space} {
+        margin-bottom: calc($value / 2) !important;
+      }
+
+      @if $space >=30 and $space <=50 {
+        .mr-#{$space} {
+          margin-right: calc($value / 2) !important;
+        }
+
+        .ml-#{$space} {
+          margin-left: calc($value / 2) !important;
+        }
+      }
+
+      // Paddings
+      .pt-#{$space} {
+        padding-top: calc($value / 2) !important;
+      }
+
+      .pb-#{$space} {
+        padding-bottom: calc($value / 2) !important;
+      }
+
+      @if $space ==50 {
+        .pl-#{$space} {
+          padding-left: calc($value / 2) !important;
+        }
+      }
+    }
+  }
+}
+
+// Order classes for md screens
+@media (max-width: 991px) {
+  .order-1-md {
+    order: 1 !important;
+  }
+
+  .order-2-md {
+    order: 2 !important;
+  }
+}
+
+// Section spacing for medium and small screens
+@media (max-width: 768px) {
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+// Mobile phones and tablets
+@media (max-width: 576px) {
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .sticky-top {
+    z-index: 1;
+  }
+}

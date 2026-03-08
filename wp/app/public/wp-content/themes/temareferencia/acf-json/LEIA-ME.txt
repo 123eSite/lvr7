@@ -1,0 +1,14 @@
+INSTRUÇÕES PARA CONFIGURAÇÃO DOS GRUPOS ACF
+=============================================
+
+Após criar a página "Cases" no WordPress:
+
+1. Acesse: ACF > Grupos de Campos
+2. Edite o grupo "Case Interno (Filha de Cases)"
+3. Em "Localização", ajuste a regra:
+   - Parâmetro: "Página pai"
+   - Operador: "é igual a"
+   - Valor: Selecione a página "Cases" criada no WP
+4. Salve o grupo
+
+Isso fará com que todas as páginas filhas de Cases tenham acesso aos campos ACF do grupo "Case Interno".

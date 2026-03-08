@@ -1,0 +1,263 @@
+/*----------------------------
+    Contact
+----------------------------*/
+.contact-panel {
+    --panel-padding: 110px;
+    --form-margin-bottom: var(--bs-gutter-x);
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+    padding: var(--panel-padding);
+}
+
+.contact-block-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-block .contact-list {
+    li {
+        font-size: 14px;
+        color: var(--color-secondary);
+
+        a {
+            color: var(--color-secondary);
+        }
+    }
+}
+
+.contact-panel-title {
+    font-size: 22px;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    padding-top: 16px;
+}
+
+.contact-layout1 {
+    .contact-panel-info {
+        .contact-list {
+            li {
+                color: var(--color-secondary);
+                font-weight: 700;
+                font-size: 14px;
+                margin-bottom: 10px;
+
+                a {
+                    color: var(--color-secondary);
+                }
+
+                i {
+                    margin-inline-end: 8px;
+                }
+            }
+        }
+
+        .contact-panel-title {
+            font-size: 22px;
+            margin-bottom: 28px;
+        }
+
+        .contact-panel-desc {
+            margin-bottom: 45px;
+        }
+    }
+}
+
+.contact-layout3 {
+    &.video-overlay:before {
+        z-index: 1;
+    }
+
+    .form-control {
+        --form-control-border-color: var(--color-gray-500);
+    }
+}
+
+.contact-layout4 {
+    .contact-panel {
+        --panel-padding: 70px;
+        --desc-margin: 150px;
+        --btn-size: 160px;
+        --arrow-size: 37px;
+        max-width: 550px;
+
+        .heading-desc {
+            margin-bottom: var(--desc-margin);
+        }
+
+        .btn-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--btn-size);
+            height: var(--btn-size);
+            border-radius: 50%;
+            border: 1px solid var(--color-white);
+
+            svg {
+                width: var(--arrow-size);
+                height: var(--arrow-size);
+            }
+        }
+    }
+}
+
+.contact-layout5 {
+    --panel-padding: 0;
+    --panel-info-padding: 50px 55px;
+    --panel-form-padding: 50px 55px;
+    --panel-info-width: 43%;
+    --panel-form-width: 57%;
+    --arrow-size: 160px;
+    --contct-title-font-size: 26px;
+
+    &.bg-overlay {
+        &:before {
+            background-color: rgba(27, 26, 26, 0.75);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: -webkit-linear-gradient(180deg, rgba(37, 55, 69, 0) 0%, rgba(22, 22, 22, 0.04) 3%, rgb(22, 22, 22) 80%);
+            background-image: -moz-linear-gradient(180deg, rgba(37, 55, 69, 0) 0%, rgba(22, 22, 22, 0.04) 3%, rgb(22, 22, 22) 80%);
+            background-image: -ms-linear-gradient(180deg, rgba(37, 55, 69, 0) 0%, rgba(22, 22, 22, 0.04) 3%, rgb(22, 22, 22) 80%);
+            background-image: linear-gradient(180deg, rgba(37, 55, 69, 0) 0%, rgba(22, 22, 22, 0.04) 3%, rgb(22, 22, 22) 80%);
+        }
+    }
+
+    .contact-panel {
+        overflow: hidden;
+        box-shadow: 0px 5px 43px 0px rgba(27, 26, 26, 0.1);
+    }
+
+    .contact-panel-form {
+        flex: 0 0 var(--panel-form-width);
+        padding: var(--panel-form-padding);
+        background-color: var(--color-white);
+    }
+
+    .contact-panel-info {
+        flex: 0 0 var(--panel-info-width);
+        padding: var(--panel-info-padding);
+
+        .arrow-flip {
+            width: var(--arrow-size);
+            height: var(--arrow-size);
+            color: var(--color-white)
+        }
+
+        .list-item {
+            font-weight: 700;
+        }
+    }
+
+    .contact-form-title {
+        font-size: var(--contct-title-font-size);
+    }
+}
+
+.contact-layout6 {
+    --panel-padding: 0;
+    --panel-info-padding: 70px;
+    --panel-form-padding: 110px;
+    --panel-info-width: 43%;
+    --panel-form-width: 57%;
+    --arrow-size: 160px;
+    --contct-title-font-size: 26px;
+
+    .contact-panel-form {
+        flex: 0 0 var(--panel-form-width);
+        padding: var(--panel-form-padding);
+        background-color: var(--color-gray-100);
+        border-radius: 0 8px 8px 0;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-image: url(../images/shapes/5.png);
+    }
+
+    .contact-panel-info {
+        flex: 0 0 var(--panel-info-width);
+        padding: var(--panel-info-padding);
+    }
+
+    .contact-form-title {
+        font-size: var(--contct-title-font-size);
+    }
+}
+
+@media (min-width:1200px) {
+    .contact-layout5 {
+        .list-item {
+            --font-size: 17px;
+        }
+    }
+
+    .contact-layout6 {
+        .counter-item {
+            --counter-number-font-size: 90px;
+            --counter-desc-font-size: 18px;
+
+            .counter-desc {
+                max-width: 320px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    .contact-panel {
+        --panel-padding: 60px;
+    }
+}
+
+@media (min-width:992px) {
+
+    .contact-layout5,
+    .contact-layout6 {
+        .contact-panel-info {
+            height: 100%;
+        }
+    }
+}
+
+/* Mobile Phones & tablets and Small Screens */
+@media (max-width:991px) {
+    .contact-panel {
+        --panel-padding: 20px;
+    }
+
+    .contact-layout4 .contact-panel {
+        --panel-padding: 30px;
+        --desc-margin: 50px;
+        --btn-size: 100px;
+        --arrow-size: 25px;
+    }
+
+    .contact-layout5 {
+        --panel-info-padding: 25px;
+        --panel-form-padding: 25px;
+        --panel-info-width: 100%;
+        --panel-form-width: 100%;
+        --arrow-size: 80px;
+        --contct-title-font-size: 20px;
+    }
+
+    .contact-layout6 {
+        --panel-info-padding: 40px 25px;
+        --panel-form-padding: 25px;
+        --panel-info-width: 100%;
+        --panel-form-width: 100%;
+        --contct-title-font-size: 20px;
+    }
+}

@@ -1,0 +1,225 @@
+[
+    {
+        "key": "group_home_lvr7",
+        "title": "Configurações da Home",
+        "fields": [
+            {
+                "key": "field_heroh1",
+                "label": "Título Principal (Hero)",
+                "name": "hero_titulo",
+                "type": "textarea",
+                "required": 1,
+                "rows": 3,
+                "new_lines": "br"
+            },
+            {
+                "key": "field_proposito_tab",
+                "label": "Propósito",
+                "name": "",
+                "type": "tab",
+                "placement": "top"
+            },
+            {
+                "key": "field_proposito_titulo",
+                "label": "Título do Propósito",
+                "name": "proposito_titulo",
+                "type": "text",
+                "required": 1
+            },
+            {
+                "key": "field_proposito_subtitulo",
+                "label": "Subtítulo do Propósito",
+                "name": "proposito_subtitulo",
+                "type": "textarea",
+                "required": 1,
+                "rows": 2,
+                "new_lines": "br"
+            },
+            {
+                "key": "field_proposito_imagem",
+                "label": "Imagem Detalhe",
+                "name": "proposito_imagem",
+                "type": "image",
+                "required": 1,
+                "return_format": "url"
+            },
+            {
+                "key": "field_proposito_valores",
+                "label": "Nossos Valores",
+                "name": "proposito_valores",
+                "type": "repeater",
+                "required": 1,
+                "min": 1,
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "subfield_valor",
+                        "label": "Valor",
+                        "name": "valor_nome",
+                        "type": "text",
+                        "required": 1
+                    }
+                ]
+            },
+            {
+                "key": "field_solucoes_tab",
+                "label": "Soluções",
+                "name": "",
+                "type": "tab",
+                "placement": "top"
+            },
+            {
+                "key": "field_solucoes_chapeu",
+                "label": "Chapéu Soluções",
+                "name": "solucoes_chapeu",
+                "type": "text",
+                "required": 1
+            },
+            {
+                "key": "field_solucoes_titulo",
+                "label": "Título Soluções",
+                "name": "solucoes_titulo",
+                "type": "text",
+                "required": 1
+            },
+            {
+                "key": "field_solucoes_lista",
+                "label": "Lista de Soluções",
+                "name": "solucoes_lista",
+                "type": "repeater",
+                "required": 1,
+                "min": 1,
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "subfield_sol_icone",
+                        "label": "Classe do Ícone (FontAwesome)",
+                        "name": "icone",
+                        "type": "text",
+                        "required": 1,
+                        "instructions": "Ex: fa-solid fa-users-line"
+                    },
+                    {
+                        "key": "subfield_sol_titulo",
+                        "label": "Título",
+                        "name": "titulo",
+                        "type": "text",
+                        "required": 1
+                    },
+                    {
+                        "key": "subfield_sol_texto",
+                        "label": "Texto",
+                        "name": "texto",
+                        "type": "textarea",
+                        "required": 1,
+                        "rows": 3,
+                        "new_lines": "br"
+                    },
+                    {
+                        "key": "subfield_sol_destaque",
+                        "label": "Destaque (Rodapé do Card)",
+                        "name": "destaque",
+                        "type": "text",
+                        "required": 1
+                    },
+                    {
+                        "key": "subfield_sol_largura",
+                        "label": "Largura (Ocupa linha toda?)",
+                        "name": "largura_total",
+                        "type": "true_false",
+                        "message": "Sim, ocupar 12 colunas",
+                        "default_value": 0
+                    }
+                ]
+            },
+            {
+                "key": "field_historia_tab",
+                "label": "História",
+                "name": "",
+                "type": "tab",
+                "placement": "top"
+            },
+            {
+                "key": "field_historia_titulo",
+                "label": "Título da História",
+                "name": "historia_titulo",
+                "type": "text",
+                "required": 1
+            },
+            {
+                "key": "field_historia_texto",
+                "label": "Texto Principal (Lado Esquerdo)",
+                "name": "historia_texto",
+                "type": "wysiwyg",
+                "required": 1,
+                "media_upload": 0,
+                "toolbar": "basic",
+                "delay": 0
+            },
+            {
+                "key": "field_historia_box",
+                "label": "Box Destaque (Fundador)",
+                "name": "historia_box",
+                "type": "textarea",
+                "required": 1,
+                "rows": 4,
+                "new_lines": "br"
+            },
+            {
+                "key": "field_historia_foto",
+                "label": "Foto Fundador",
+                "name": "historia_foto",
+                "type": "image",
+                "required": 1,
+                "return_format": "url"
+            },
+            {
+                "key": "field_contato_tab",
+                "label": "Contato",
+                "name": "",
+                "type": "tab",
+                "placement": "top"
+            },
+            {
+                "key": "field_contato_titulo",
+                "label": "Título Contato",
+                "name": "contato_titulo",
+                "type": "text",
+                "required": 1
+            },
+            {
+                "key": "field_contato_texto",
+                "label": "Texto Contato",
+                "name": "contato_texto",
+                "type": "textarea",
+                "required": 1,
+                "rows": 2,
+                "new_lines": "br"
+            },
+            {
+                "key": "field_contato_email",
+                "label": "E-mail de Contato",
+                "name": "contato_email",
+                "type": "email",
+                "required": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_type",
+                    "operator": "==",
+                    "value": "front_page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": ["the_content"],
+        "active": 1,
+        "description": ""
+    }
+]

@@ -1,0 +1,109 @@
+//  Sass Mixins
+
+// Media Query Mixins 
+$breakpoints: (
+    xs: 576px,
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    xl: 1300px,
+    xxl: 1400px
+);
+
+@mixin responsive($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: (map-get($breakpoints, $breakpoint) - 1px)) {
+            @content;
+        }
+    }
+
+    @else if type-of($breakpoint)==number {
+        @media (max-width: ($breakpoint - 1px)) {
+            @content;
+        }
+    }
+}
+
+@mixin responsive-min($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    @else if type-of($breakpoint)==number {
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin responsive-between($min-breakpoint, $max-breakpoint) {
+    $min-value: 0;
+    $max-value: 0;
+
+    // Get min-width value
+    @if map-has-key($breakpoints, $min-breakpoint) {
+        $min-value: map-get($breakpoints, $min-breakpoint);
+    }
+
+    @else if type-of($min-breakpoint)==number {
+        $min-value: $min-breakpoint;
+    }
+
+    // Get max-width value
+    @if map-has-key($breakpoints, $max-breakpoint) {
+        $max-value: map-get($breakpoints, $max-breakpoint);
+    }
+
+    @else if type-of($max-breakpoint)==number {
+        $max-value: $max-breakpoint;
+    }
+
+    // Apply media query if both values are valid
+    @if $min-value >0 and $max-value >0 {
+        @media (min-width: $min-value) and (max-width: $max-value) {
+            @content;
+        }
+    }
+}
+
+// Animation Mixin 
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+// Add prefixes before CSS3 Elements
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    #{$property}: $value;
+}

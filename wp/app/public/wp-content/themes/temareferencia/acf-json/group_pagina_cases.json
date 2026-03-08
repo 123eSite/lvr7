@@ -1,0 +1,68 @@
+{
+    "key": "group_pagina_cases",
+    "title": "Página Cases",
+    "fields": [
+        {
+            "key": "field_cases_subtitulo",
+            "label": "Subtítulo",
+            "name": "subtitulo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Subtítulo exibido acima do título principal.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_cases_titulo",
+            "label": "Título",
+            "name": "titulo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Título principal da página Cases.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "15"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Campos para a página Cases (lista de cases).",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1769634310
+}
