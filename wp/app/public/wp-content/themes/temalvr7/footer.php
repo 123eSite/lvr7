@@ -9,11 +9,11 @@
                 <span class="h3 d-block mb-3"><img width="150"
                         src="<?php bloginfo('template_url'); ?>/img/lvr7-transparente.webp" alt=""></span>
                 <p class="mb-4">Transformando o futuro através de soluções inovadoras.</p>
-                <div class="social-links">
+                <!-- <div class="social-links">
                     <a href="#" class="me-3"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="me-3"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" class="me-3"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
+                </div> -->
             </div>
 
             <!-- Navigation -->
@@ -38,8 +38,7 @@
             <div class="col-lg-3 col-md-4">
                 <h5 class="mb-3">Contato</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i> contato@lvr7.com.br</li>
-                    <li class="mb-2"><i class="fa-solid fa-phone me-2"></i> (11) 99999-9999</li>
+                    <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i> <?php the_field('contato_email'); ?></li>
                 </ul>
             </div>
         </div>

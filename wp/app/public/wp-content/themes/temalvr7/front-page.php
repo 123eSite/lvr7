@@ -21,10 +21,10 @@ if (have_posts()):
         </section>
 
         <!-- Propósito Section (Ex-Quem Somos) -->
-        <section id="proposito" class="about padding-tb">
+        <section id="proposito" class="about padding-tb" style="background-image: url('<?php echo get_field('proposito_imagem') ? get_field('proposito_imagem') : get_bloginfo('template_url') . '/img/linhas.webp'; ?>'); background-size:contain; background-position: right center; background-repeat: no-repeat;">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="col-lg-12 mb-5 mb-lg-0">
                         <h2 class="mb-4"><?php the_field('proposito_titulo'); ?> <img width="150px"
                                 src="<?php bloginfo('template_url'); ?>/img/lvr7.webp" alt=""></h2>
 
@@ -47,11 +47,6 @@ if (have_posts()):
                                 <?php endwhile; ?>
                             </ul>
                         <?php endif; ?>
-                    </div>
-
-                    <div class="col-lg-5 offset-lg-1">
-                        <img src="<?php echo get_field('proposito_imagem') ? get_field('proposito_imagem') : get_bloginfo('template_url') . '/img/linhas.webp'; ?>"
-                            alt="Propósito Detalhe">
                     </div>
                 </div>
             </div>
@@ -135,7 +130,7 @@ if (have_posts()):
         </section>
 
         <!-- Contact Section -->
-        <section id="contato" class="contact padding-tb text-white" style="background-color: var(--color-green);">
+        <?php /*<section id="contato" class="contact padding-tb text-white" style="background-color: var(--color-green);">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-5 mb-lg-0">
@@ -158,7 +153,7 @@ if (have_posts()):
                     </div> -->
                 </div>
             </div>
-        </section>
+        </section> */ ?>
 
         <?php
     endwhile;

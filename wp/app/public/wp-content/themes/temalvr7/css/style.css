@@ -265,6 +265,9 @@ header.fix.show {
 .about h2 img {
     padding-bottom: 11px;
 }
+.about h3 {
+    background-color: var(--color-white);
+}
 
 /* ========== Responsivo ========== */
 @media (max-width: 1399px) {
