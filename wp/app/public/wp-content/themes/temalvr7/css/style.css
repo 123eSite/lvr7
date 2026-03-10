@@ -262,6 +262,10 @@ header.fix.show {
     transform: translateY(-3px);
 }
 
+.about h2 img {
+    padding-bottom: 11px;
+}
+
 /* ========== Responsivo ========== */
 @media (max-width: 1399px) {
     h1 {

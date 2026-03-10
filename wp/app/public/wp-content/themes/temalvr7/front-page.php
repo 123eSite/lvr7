@@ -26,7 +26,7 @@ if (have_posts()):
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <h2 class="mb-4"><?php the_field('proposito_titulo'); ?> <img width="150px"
-                                src="<?php bloginfo('template_url'); ?>/img/lvr7.jpeg" alt=""></h2>
+                                src="<?php bloginfo('template_url'); ?>/img/lvr7.webp" alt=""></h2>
 
                         <h3 class="h5 mb-4 fw-normal lh-base"><?php the_field('proposito_subtitulo'); ?></h3>
 
@@ -85,8 +85,8 @@ if (have_posts()):
                                             <div class="col-md-11">
                                                 <h3 class="h4 mb-2"><?php the_sub_field('titulo'); ?></h3>
                                                 <p class="mb-2"><?php the_sub_field('texto'); ?></p>
-                                                <p class="small text-muted mb-0"><strong>Solução:</strong>
-                                                    <?php the_sub_field('destaque'); ?></p>
+                                                <!-- <p class="small text-muted mb-0"><strong>Solução:</strong>
+                                                    <?php the_sub_field('destaque'); ?></p> -->
                                             </div>
                                         </div>
                                     <?php else: ?>
@@ -111,7 +111,7 @@ if (have_posts()):
         <!-- História Section -->
         <section id="historia" class="history padding-tb">
             <div class="container">
-                <div class="text-center mb-5">
+                <div class="mb-5">
                     <div class="text-center mb-5">
                         <h2><?php the_field('historia_titulo'); ?></h2>
                     </div>
@@ -140,7 +140,7 @@ if (have_posts()):
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <h2 class="text-white mb-4"><?php the_field('contato_titulo'); ?></h2>
-                        <p class="mb-5 text-white opacity-75"><?php the_field('contato_texto'); ?></p>
+                        <!-- <p class="mb-5 text-white opacity-75"><?php the_field('contato_texto'); ?></p> -->
 
                         <div class="d-flex align-items-start mb-4">
                             <i class="fa-solid fa-envelope mt-1 me-3 fa-lg"></i>
@@ -150,12 +150,12 @@ if (have_posts()):
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
+                    <!-- <div class="col-lg-5 offset-lg-1">
                         <div class="bg-white p-4 rounded-3 text-dark">
                             <h3 class="h4 mb-4 text-dark">Fale Conosco</h3>
                             <?php echo do_shortcode('[contact-form-7 id="meu_form_id" title="Formulário de Contato da Home"]'); ?>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
