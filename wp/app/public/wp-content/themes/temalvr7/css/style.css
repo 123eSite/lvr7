@@ -265,8 +265,9 @@ header.fix.show {
 .about h2 img {
     padding-bottom: 11px;
 }
-.about h3 {
+.about h3, .about h4 {
     background-color: var(--color-white);
+    display: table;
 }
 
 /* ========== Responsivo ========== */
@@ -294,9 +295,7 @@ header.fix.show {
         margin-top: 16px;
     }
     .hero {
-        background-image: url('../img/slider-mobile.webp'); /* Placeholder path, needs check */
-        background-size: cover;
-        background-position: left center;
+        background: none;
     }
     .history .bg-gray-light {
         width: 100%;

@@ -67,7 +67,7 @@ function temalvr7_enqueue_assets() {
 		'temalvr7-style',
 		$template_uri . '/css/style.css',
 		array( 'temalvr7-bootstrap', 'temalvr7-icons' ),
-		'1.1.0'
+		'1.2.0'
 	);
 
 	// Tema Style.css (para o WordPress reconhecer, por segurança)

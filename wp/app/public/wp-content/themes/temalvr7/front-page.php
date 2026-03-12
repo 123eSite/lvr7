@@ -21,7 +21,7 @@ if (have_posts()):
         </section>
 
         <!-- Propósito Section (Ex-Quem Somos) -->
-        <section id="proposito" class="about padding-tb" style="background-image: url('<?php echo get_field('proposito_imagem') ? get_field('proposito_imagem') : get_bloginfo('template_url') . '/img/linhas.webp'; ?>'); background-size:contain; background-position: right center; background-repeat: no-repeat;">
+        <section id="proposito" class="about padding-tb" style="background-image: url('<?php echo get_field('proposito_imagem') ? get_field('proposito_imagem') : get_bloginfo('template_url') . '/img/Faixas.svg'; ?>'); background-size:contain; background-position: right center; background-repeat: no-repeat;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12 mb-5 mb-lg-0">
