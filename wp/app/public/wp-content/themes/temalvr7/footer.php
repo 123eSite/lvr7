@@ -1,14 +1,13 @@
 </main>
 
 <!-- Footer -->
-<footer class="footer padding-tb bg-gray-light">
+<footer id="contato" class="footer padding-tb bg-gray-light">
     <div class="container">
         <div class="row">
             <!-- Logo & Socials -->
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <span class="h3 d-block mb-3"><img width="150"
                         src="<?php bloginfo('template_url'); ?>/img/lvr7-transparente.webp" alt=""></span>
-                <p class="mb-4">Transformando o futuro através de soluções inovadoras.</p>
                 <!-- <div class="social-links">
                     <a href="#" class="me-3"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="me-3"><i class="fa-brands fa-linkedin-in"></i></a>
